@@ -3,7 +3,7 @@ import React from "react";
 
 function Block(props) {
   return (
-    <button className="block" onClick={props.onClick}>
+    <button className="block">
       {props.value}
     </button>
   );
@@ -14,7 +14,7 @@ class Board extends React.Component {
     return (
       <Block
         value={this.props.blocks[k]}
-        onClick={() => this.props.onClick(k)}
+       // onClick={() => this.props.onClick(k)}
       />
     );
   }
@@ -34,7 +34,7 @@ class Board extends React.Component {
   }
 
   render() {
-    return <div>{this.renderBoard()}</div>;
+    return this.renderBoard();
   }
 }
 
