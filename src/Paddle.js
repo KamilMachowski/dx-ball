@@ -5,7 +5,7 @@ function Block(props) {
   return <button id={props.key} className="block">{props.value}</button>;
 }
 
-class Board extends React.Component {
+class Paddle extends React.Component {
   renderBlock(k) {
     return (
       <Block
@@ -39,4 +39,4 @@ class Board extends React.Component {
   }
 }
 
-export default Board;
+export default Paddle;
