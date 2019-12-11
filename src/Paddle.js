@@ -26,7 +26,7 @@ class Paddle extends React.Component {
     return (
       <div className="game-paddle full" onMouseMove={this.onMouseMove}>
         <button className="paddle" style={{ left: `${x}vw`,   width: `${length}vw` }}>
-          Mouse position: {x}
+          {/* Mouse position: {x} */}
         </button>
       </div>
     );

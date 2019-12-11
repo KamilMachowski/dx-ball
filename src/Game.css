@@ -24,6 +24,10 @@
 .paddle {
   position: fixed;
   bottom: 6vh;
-
   height: 2vh;
+}
+.ball{
+  position: fixed;
+  height: 2vh;
+  width: 2vh;
 }
