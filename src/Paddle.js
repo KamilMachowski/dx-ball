@@ -1,41 +1,35 @@
 import React from "react";
 //import "./Board.css";
-
-function Block(props) {
-  return <button id={props.key} className="block">{props.value}</button>;
-}
+//import windowWidth from "react-window-size";
 
 class Paddle extends React.Component {
-  renderBlock(k) {
-    return (
-      <Block
-        value={this.props.blocks[k]}
-        key={k}
-        // onClick={() => this.props.onClick(k)}
-      />
-    );
+  constructor(props) {
+    super(props);
+    this.state = {
+      length: 10, // in viewport width %
+      x: 0
+    };
+    this.onMouseMove = this.onMouseMove.bind(this);
   }
-  renderRow(i) {
-    var row = [];
-    for (var j = 0; j < 20; j++) {
-      row.push(this.renderBlock(i * 20 + j));
-    }
-    return row;
+  onMouseMove(e) {
+    this.setState({ x: e.nativeEvent.offsetX });
   }
-  renderBoard() {
-    var board = [];
-    for (var i = 0; i < 16; i++) {
-      board.push(
-        <div className="board-row">
-          <div>{this.renderRow(i)}</div>
-        </div>
-      );
-    }
-    return board;
-  }
-
   render() {
-    return this.renderBoard();
+
+
+    let length = this.state.length;
+    let x = this.state.x*100/1920 - length/2; // in viewport width %
+    if (x<10) x=10;
+    if (x>90-length) x=90-length; // check if not behind range
+    
+
+    return (
+      <div className="game-paddle full" onMouseMove={this.onMouseMove}>
+        <button className="paddle" style={{ left: `${x}vw`,   width: `${length}vw` }}>
+          Mouse position: {x}
+        </button>
+      </div>
+    );
   }
 }
 

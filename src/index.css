@@ -7,16 +7,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-button {
-  width: 80px;
-  height: 40px;
-}
-.game {
-  margin-left:150px;
-  width: 1600px;
-  height: 800px;
-  background-color: black;
-}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

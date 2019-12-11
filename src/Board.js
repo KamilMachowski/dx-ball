@@ -1,15 +1,26 @@
 import React from "react";
+import data from "./lvl/1";
 //import "./Board.css";
 
 function Block(props) {
-  return <button id={props.key} className="block">{props.value}</button>;
+  return (
+    <button id={props.key} className="block">
+      {props.value}
+    </button>
+  );
 }
 
 class Board extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      blocks: data
+    };
+  }
   renderBlock(k) {
     return (
       <Block
-        value={this.props.blocks[k]}
+        value={this.state.blocks[k]}
         key={k}
         // onClick={() => this.props.onClick(k)}
       />
@@ -35,7 +46,7 @@ class Board extends React.Component {
   }
 
   render() {
-    return this.renderBoard();
+    return (<div className="game-board">{this.renderBoard()}</div>);
   }
 }
 
