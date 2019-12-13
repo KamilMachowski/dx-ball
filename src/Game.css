@@ -28,6 +28,6 @@
 }
 .ball{
   position: fixed;
-  height: 2vh;
-  width: 2vh;
+  height: 10px;
+  width: 20px;
 }

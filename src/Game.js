@@ -3,6 +3,7 @@ import React from "react";
 import "./Game.css";
 import Board from "./Board";
 import Paddle from "./Paddle";
+import Ball from "./Ball";
 
 class Game extends React.Component {
 
@@ -11,6 +12,7 @@ class Game extends React.Component {
       <div className="game" >
         <Board />
         <Paddle />
+        <Ball />
       </div>
     );
   }
