@@ -1,5 +1,7 @@
 import React from "react";
 import data from "./lvl/1";
+import Konva from "konva";
+import { Stage, Layer, Rect, Text } from "react-konva";
 //import "./Board.css";
 
 function Block(props) {
@@ -17,6 +19,7 @@ class Board extends React.Component {
       blocks: data
     };
   }
+
   renderBlock(k) {
     return (
       <Block
@@ -46,7 +49,12 @@ class Board extends React.Component {
   }
 
   render() {
-    return (<div className="game-board">{this.renderBoard()}</div>);
+    
+
+    var brick = new Konva.Rect();
+    var paddle = new Konva.Rect();
+    var ball = new Konva.Circle();
+    return <div className="game-board">{this.renderBoard()}</div>;
   }
 }
 
