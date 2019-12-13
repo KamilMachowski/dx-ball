@@ -1,7 +1,6 @@
 import React from "react";
 import Konva from "konva";
 import { Stage, Layer, Rect, Text } from "react-konva";
-import "./Game.css";
 import Bricks from "./Bricks";
 import Paddle from "./Paddle";
 import Ball from "./Ball";
@@ -15,13 +14,13 @@ class Game extends React.Component {
     };
   }
   render() {
-//    layer.draw();
+    //    layer.draw();
     return (
-      <div id="container" className="game">
+      <div className="game container">
         <Stage width={this.state.width} height={this.state.height}>
           <Layer>
-            {/* <Bricks />
-            <Paddle />
+            <Bricks width={this.state.width} />
+            {/* <Paddle />
             <Ball /> */}
           </Layer>
         </Stage>
