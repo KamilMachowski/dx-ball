@@ -29,7 +29,7 @@ class Bricks extends React.Component {
   // }
   brick(x, y, width, height, fill) {
     console.log(x, y, width, height, fill);
-    return (<Rect x={x} y={y} width={width} height={height} fill={fill} />);
+    return (`<Rect x={${x}} y={${y}} width={${width}} height={${height}} fill="${fill}" />`);
   }
   brickColor(colorCode) {
     switch (colorCode) {
@@ -47,8 +47,8 @@ class Bricks extends React.Component {
     var brickHeight = brickWidth / 2;
     var bricks='';
     // generate bricks
-    for (var iy = 0; iy < 16; iy++) {
-      for (var ix = 0; ix < 20; ix++) {
+    for (var iy = 0; iy < 1; iy++) {
+      for (var ix = 0; ix < 1; ix++) {
         var x = ix * brickWidth;
         var y = iy * brickHeight;
         var width = brickWidth - 1;
@@ -63,9 +63,9 @@ class Bricks extends React.Component {
 
   render() {
     // return <div className="game-board">{this.renderBoard()}</div>;
-    console.log('1');
-    return (this.renderBricks());
+    //return (this.renderBricks());
     //return <Rect x={x} y={y} width={width} height={height} fill={fill} />;
+    return <Rect x={0} y={0} width={39} height={19} fill="green" />
   }
 }
 
